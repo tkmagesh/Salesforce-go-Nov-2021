@@ -4,7 +4,9 @@ import "fmt"
 
 func main() {
 	fmt.Println(add(100, 200))
-	fmt.Println(divide(100, 7))
+	//fmt.Println(divide(100, 7))
+	q, _ := divide(100, 7)
+	fmt.Println(q)
 }
 
 /*
