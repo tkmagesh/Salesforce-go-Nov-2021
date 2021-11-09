@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+//unused var
+var z int
+
 func main() {
 	/*
 		var msg string
@@ -85,5 +88,6 @@ func main() {
 	label, x, y := "Add Result : ", 100, 200
 
 	fmt.Printf("%s %d + %d = %d\n", label, x, y, x+y)
+	fmt.Printf("typeof x = %T\n", x)
 
 }
