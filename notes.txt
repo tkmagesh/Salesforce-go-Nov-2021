@@ -112,3 +112,8 @@ if user choice < 1 or > 5, display an error message and display the menu again
 
 Functions
     variadic functions
+    anonymous functions
+    higher order functions
+        functions can be assigned to variables
+        functions can be passed as arguments to other functions
+        functions can be returned by other functions
