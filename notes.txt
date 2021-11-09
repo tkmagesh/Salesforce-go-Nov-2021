@@ -109,3 +109,6 @@ Display the below menu again and again until the user chooses 'exit'
 if user choice = 1 to 4, accept two numbers from the user, perform the respective operation and print the result and display the menu again
 if user choice = 5, exit the program
 if user choice < 1 or > 5, display an error message and display the menu again
+
+Functions
+    variadic functions
