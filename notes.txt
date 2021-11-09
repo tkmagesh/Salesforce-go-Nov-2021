@@ -117,3 +117,6 @@ Functions
         functions can be assigned to variables
         functions can be passed as arguments to other functions
         functions can be returned by other functions
+
+Assignment - 2
+    Refactor the assingment-1 solution into functions
