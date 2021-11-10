@@ -11,7 +11,8 @@ func main() {
 	//find the "size of the word" that occurs the most by size and print the word size and the number of occurrences
 
 	words := strings.Split(str, " ")
-	wordCountBySize := make(map[int]int)
+	//wordCountBySize := make(map[int]int)
+	wordCountBySize := map[int]int{}
 	for _, word := range words {
 		wordCountBySize[len(word)]++
 	}
