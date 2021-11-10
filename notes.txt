@@ -159,3 +159,12 @@ go.mod
 
 To create a mod file
     go mod init <app_name>
+
+To install a module
+    go get <module_path>
+
+To sync the module dependencies
+    go mod tidy
+
+To localize the dependencies
+    go mod vendor
