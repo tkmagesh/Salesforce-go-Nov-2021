@@ -81,4 +81,33 @@ func main() {
 	fmt.Println("Stationary Products[2 :] => ", stationaryProducts[2:])
 	fmt.Println("Stationary Products[:2] => ", stationaryProducts[:2])
 
+	fmt.Println("Maps")
+	var productRankings = map[string]int{
+		"Pen":    4,
+		"Pencil": 2,
+		"Marker": 1,
+	}
+
+	fmt.Println(productRankings)
+	fmt.Println("Ranking of Pen => ", productRankings["Pen"])
+
+	fmt.Println("Appending a new key value pair")
+	productRankings["Scribble-Pad"] = 3
+	fmt.Println(productRankings)
+
+	fmt.Println("Checking if a key exists")
+	if rank, exists := productRankings["Ruler"]; !exists {
+		fmt.Println("Ruler does not exist")
+	} else {
+		fmt.Println("Ruler exists => ", rank)
+	}
+
+	fmt.Println("Deleting a key value pair")
+	delete(productRankings, "Pen")
+	fmt.Println(productRankings)
+
+	fmt.Println("Iterating over a map")
+	for key, value := range productRankings {
+		fmt.Println(key, value)
+	}
 }
