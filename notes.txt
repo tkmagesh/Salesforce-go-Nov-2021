@@ -132,3 +132,30 @@ Collection Types
     map
         a typed collection of key-value pairs
     
+
+Modularity
+    modules
+    packages
+
+GOPATH
+    bin
+    pkg
+    src
+        github.com
+            tkmagesh
+                app-1
+                    pkg-1
+                        file.go
+                    pkg-2
+                        import "github.com/tkmagesh/app-1/pkg-1"
+                        file.go
+                    main.go
+                app-2
+                    main.go
+
+go.mod
+    target go runtime version
+    list of dependencies
+
+To create a mod file
+    go mod init <app_name>
