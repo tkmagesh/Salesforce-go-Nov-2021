@@ -120,3 +120,15 @@ Functions
 
 Assignment - 2
     Refactor the assingment-1 solution into functions
+
+Collection Types
+    array
+        a fixed size collection of values of the same type
+
+    slice
+        a dynamic sized collection of values of the same type
+        wrapper for an array
+
+    map
+        a typed collection of key-value pairs
+    
