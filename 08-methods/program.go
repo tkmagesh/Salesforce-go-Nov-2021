@@ -10,6 +10,11 @@ type Product struct {
 	Category string
 }
 
+type PerishableProduct struct {
+	Product
+	Expiry string
+}
+
 func main() {
 
 	product := Product{Id: 100, Name: "Pen", Cost: 5.0, Units: 10, Category: "Stationery"}
@@ -20,6 +25,9 @@ func main() {
 	product.applyDiscount(0.50)
 	fmt.Printf("After applying discount : \n%#v\n", product)
 
+	grapes := PerishableProduct{Product: Product{201, "Grapes", 5.0, 20, "Fruit"}, Expiry: "2 Days"}
+	grapes.applyDiscount(0.50)
+	fmt.Printf("%#v\n", grapes)
 }
 
 func (product Product) print() {
