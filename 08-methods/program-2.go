@@ -19,7 +19,7 @@ func main() {
 
 	product := Product{Id: 100, Name: "Pen", Cost: 5.0, Units: 10, Category: "Stationery"}
 	//print(product)
-	product.print()
+	fmt.Println(product.format())
 
 	fmt.Printf("Before applying discount : \n%#v\n", product)
 	product.applyDiscount(0.50)
@@ -28,17 +28,17 @@ func main() {
 	grapes := PerishableProduct{Product: Product{201, "Grapes", 5.0, 20, "Fruit"}, Expiry: "2 Days"}
 	grapes.applyDiscount(0.50)
 	//fmt.Printf("%#v\n", grapes)
-	grapes.print()
+	fmt.Println(grapes.format())
 }
 
-func (product Product) print() {
-	fmt.Printf("Id = %d, Name = %s, Cost = %f, Units = %d, Category = %s\n", product.Id, product.Name, product.Cost, product.Units, product.Category)
+func (product Product) format() string {
+	return fmt.Sprintf("Id = %d, Name = %s, Cost = %f, Units = %d, Category = %s\n", product.Id, product.Name, product.Cost, product.Units, product.Category)
 }
 
 func (product *Product) applyDiscount(discount float64) {
 	product.Cost *= (1 - discount)
 }
 
-func (pp *PerishableProduct) print() {
-	fmt.Printf("Id = %d, Name = %s, Cost = %f, Units = %d, Category = %s, Expiry = %s\n", pp.Id, pp.Name, pp.Cost, pp.Units, pp.Category, pp.Expiry)
+func (pp *PerishableProduct) format() string {
+	return fmt.Sprintf("%s, Expiry = %s\n", pp.Product.format(), pp.Expiry)
 }
