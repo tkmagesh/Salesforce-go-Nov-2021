@@ -24,6 +24,8 @@ func main() {
 	fmt.Println(grapes.Product.Id, grapes.Name, grapes.Cost)
 
 	//use the applyDiscount function to apply 20% discount the 'grapes'
+	applyDiscount(&grapes.Product, 0.2)
+	fmt.Printf("%#v\n", grapes)
 }
 
 func applyDiscount(product *Product, discount float64) {
