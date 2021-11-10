@@ -6,6 +6,7 @@ func main() {
 	defer func() {
 		fmt.Println("[@main] deferred")
 	}()
+
 	fmt.Println("result from  f1() = ", f1())
 	fmt.Println("main completed")
 }
@@ -15,6 +16,7 @@ func f1() (result int) {
 		fmt.Println("[@f1] deferred - 1")
 		result = 500
 	}()
+
 	defer func() {
 		fmt.Println("[@f1] deferred - 2")
 	}()
