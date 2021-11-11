@@ -169,3 +169,9 @@ To localize the dependencies
 Channel
     A read operation is a blocking operation
     A write can be successful only if a read is already initiated (applicable only for "UN BUFFERRED" channels)
+
+To run the tests
+    go test -v ./...
+    
+To run benchmarks
+    go test -v ./... -bench=.
