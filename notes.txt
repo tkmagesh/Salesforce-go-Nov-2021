@@ -165,3 +165,7 @@ To sync the module dependencies
 
 To localize the dependencies
     go mod vendor
+
+Channel
+    A read operation is a blocking operation
+    A write can be successful only if a read is already initiated (applicable only for "UN BUFFERRED" channels)

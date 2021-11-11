@@ -9,6 +9,7 @@ func main() {
 	fmt.Println("main started")
 	ch := make(chan int)
 	go add(100, 200, ch)
+	/* schedule some time consuming go routines */
 	result := <-ch //channel "read" is a blocking operation
 	fmt.Println("result :", result)
 }
