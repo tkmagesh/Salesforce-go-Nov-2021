@@ -8,18 +8,22 @@ func main() {
 	dataSet2 := data[len(data)/2:]
 	ch1 := make(chan int)
 	ch2 := make(chan int)
-	go sum(ch1, dataSet1...)
-	go sum(ch2, dataSet2...)
+	go func() {
+		ch1 <- sum(dataSet1...)
+	}()
+	go func() {
+		ch2 <- sum(dataSet2...)
+	}()
 	result := <-ch1 + <-ch2
 	fmt.Println("Sum = ", result)
 }
 
-func sum(ch chan int, nos ...int) {
+func sum(nos ...int) int {
 	var result int
 	for _, v := range nos {
 		result += v
 	}
-	ch <- result
+	return result
 }
 
 /*
