@@ -9,25 +9,21 @@ import (
 
 func main() {
 	ch := make(chan int)
-	go fibonacci(ch)
+	done := make(chan bool)
+
+	go fibonacci(ch, done)
+	go func() {
+		var input string
+		fmt.Scanln(&input)
+		done <- true
+	}()
+
 	for no := range ch {
 		fmt.Println(no)
 	}
 }
 
-func fibonacci(ch chan int) {
-	done := time.After(10 * time.Second)
-
-	/*
-		done := func() chan string {
-			ch := make(chan string)
-			go func() {
-				time.Sleep(10 * time.Second)
-				ch <- "done"
-			}()
-			return ch
-		}()
-	*/
+func fibonacci(ch chan int, done chan bool) {
 
 	x, y := 0, 1
 
